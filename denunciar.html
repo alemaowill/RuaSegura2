@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="boostrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="boostrap/css/bootstrap.css">
+        <link rel="stylesheet" href="boostrap/css/estilo.css">
+        <script src="jquery/jquery-3.3.1.js"></script>
+        <script type="text/javascript"> //script para trocar o estilo do menu ao rolar a pagina
+            jQuery(function () {
+                jQuery(window).scroll(function () {
+                    if (jQuery(this).scrollTop() > 20) {
+                        $("#menu1").addClass("menu-diferente");
+                    } else {
+                        $("#menu1").removeClass("menu-diferente");
+                    }
+                });
+            });
+
+            // função nome
+
+        </script>
+
+        <title>Fique seguro</title>
+    </head>
+
+    <body>
+
+        <!-- menu -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="menu1">
+            <a class="navbar-brand" href="index.html">Rua Segura</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav active">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="denunciar.html">Denunciar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mostrar_ranking.php">Estatísticas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Formulario -->
+        <form  name="formulario" method="post" action="salvar_denuncia.php"  class="form-denunciar">
+            <div class="form-group col-md-6 offset-md-3">
+                <h4>Formulário</h4>
+                <label for="nome">Nome Completo</label>
+                <input name="nome" required type="text" class="form-control" id="nome" placeholder="Insira seu nome completo" pattern="[a-zA-Z-$áéíóúç\s]+$" required title="Somente Letras" onkeyup="maskIt(this,event,'')">
+
+                       <label for="email">E-mail</label>
+                <input name="email" required type="email" class="form-control" id="email" placeholder="Insira seu email">
+
+                <label for="tipoRoubo">Tipo de roubo</label>
+                <select  name="tipoRoubo" id="tipoRoubo" class="form-control" required>
+                    <option selected value="">Selecione</option>
+                    <option value="Mão armada">Mão armada</option>
+                    <option value="Sob ameaça">Sob ameaça</option>
+                    <option value="Arrastão">Arrastão</option>
+                    <option value="Furto">Furto</option>
+                </select>
+
+                <label for="genero">Genero</label>
+                <select id="genero" name="genero" class="form-control" required>
+                    <option selected value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                
+                <label for="local">Local onde aconteceu o roubo</label>
+                <select class="form-control" name="local" id="local" required>
+                    <option selected value="">Selecione</option>
+                    <option>Rua dos Andradas</option>
+                    <option>Alberto Bins</option>
+                    <option>Riachuelo</option>
+                    <option>General Vitorino</option>
+                    <option>Marechal Floriano Peixoto</option>
+                    <option>Doutor Flores</option>
+                    <option>Siqueira Campos</option>
+                    <option>7 de Setembro</option>
+
+                </select>
+
+                <button type="reset" class="btn btn-light">Resetar</button>
+                <input type="submit" class="btn btn-light" value="Enviar">
+
+
+            </div>
+        </form>
+        <!-- Footer -->
+        <footer class="footer">
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+            <div class="container">
+                <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                        <a  href="http://www.facebook.com" target="_blank" class="btn-floating btn-fb mx-1">
+                            <i class="fa fa-facebook"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/" target="_blank" class="btn-floating btn-tw mx-1">
+                            <i class="fa fa-twitter"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com" target="_blank" class="btn-floating btn-gplus mx-1">
+                            <i class="fa fa-google-plus"> </i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/" target="_blank" class="btn-floating btn-li mx-1">
+                            <i class="fa fa-linkedin"> </i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Social buttons -->
+            </div>
+            <div class="p-footer"> Desenvolvido por William, Vitor e Gabriel</div>
+            <div class="copyright">© 2018 Copyright:
+                <a href="https://www.fadergs.edu.br/"> Fadergs.edu.br </a>
+            </div>
+        </footer>
+        
+        <!-- Importação de frameworks -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.8/jquery.mask.js"></script>
+    </body>
+</html>
