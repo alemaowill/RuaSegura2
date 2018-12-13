@@ -13,7 +13,7 @@ function conectar_banco($dbname = "") {
 
     //senha do xampp
     $username = 'root';
-    $password = '123';
+    $password = '';
 
     $dsn = "${driver}:host=${host};charset=utf8mb4;${dbname}";
     $options = [
